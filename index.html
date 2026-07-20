@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loot — Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.6; color: #1a1512; background: #fff; }
+  h1 { margin-bottom: 0.25rem; }
+  .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 { margin-top: 2rem; }
+  ul { padding-left: 1.25rem; }
+  a { color: #0a5; }
+  code { background: #f0f0f0; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Loot</h1>
+<p class="updated">Last updated: July 20, 2026</p>
+
+<p>Loot ("the app") is an Android app for tracking a Magic: The Gathering card
+collection and checking card prices by voice, photo, or text. This page
+explains what data the app handles and how.</p>
+
+<h2>No accounts, no sign-up</h2>
+<p>Loot has no user accounts, no login, and no server-side profile. There is
+nothing to register and nothing tied to your identity.</p>
+
+<h2>Your collection data stays on your device</h2>
+<p>Your card collection — names, quantities, conditions, and anything
+imported from a ManaBox CSV export — is stored locally on your device only,
+in a private on-device database. It is never uploaded to us or to any third
+party. Uninstalling the app deletes this data permanently; there is no
+account to delete because none exists.</p>
+
+<h2>Voice input</h2>
+<p>When you use the microphone to speak a card name, the audio is processed
+by Android's built-in speech recognition service (typically provided by
+Google) to produce a text transcript. Loot only receives the resulting text,
+not a copy of the audio recording.</p>
+
+<h2>Photo scan</h2>
+<p>The photo-scan feature reads a card's set symbol and collector number
+from a photo you take. This is processed entirely on-device using Google's
+ML Kit text recognition — photos are not uploaded or stored by Loot.</p>
+
+<h2>Card lookups</h2>
+<p>To fetch card details and prices, Loot sends the card name (or set code
+and collector number) you're looking up to one of:</p>
+<ul>
+  <li><a href="https://scryfall.com">Scryfall</a>, a free public Magic: The
+  Gathering card database, directly from your device; or</li>
+  <li>Loot's own backend service, which mirrors a subset of Scryfall's data
+  and is gated by Google's Play Integrity API rather than a user account —
+  see below.</li>
+</ul>
+<p>Only the card name/query text is sent. No personal information, device
+identifiers, or collection data is included in these requests.</p>
+
+<h2>Play Integrity</h2>
+<p>Requests to Loot's own backend are verified using
+<a href="https://developer.android.com/google/play/integrity">Google Play
+Integrity</a>, which confirms a request comes from a genuine, unmodified
+install of Loot on a certified device. This is a device/app attestation
+check, not an account system — it does not identify you personally and
+nothing is stored tied to a persistent user or device ID.</p>
+
+<h2>Optional AI-assisted matching</h2>
+<p>Loot has an optional, off-by-default setting that uses Anthropic's Claude
+API to help match misheard card names. If you turn this on, you supply your
+own Anthropic API key, which is stored securely on your device (Android's
+encrypted keystore, via <code>expo-secure-store</code>) and never sent to
+us. When this setting is enabled, the text you're trying to match is sent
+directly from your device to Anthropic's API — see
+<a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy
+policy</a>. This feature is entirely optional and does nothing unless you
+enable it and provide a key.</p>
+
+<h2>Advertising</h2>
+<p>Loot shows ads via Google AdMob. AdMob may collect device identifiers
+(such as the advertising ID) and other data to serve and measure ads, per
+Google's own policies. See
+<a href="https://policies.google.com/technologies/ads">How Google uses
+information from sites or apps that use Google services</a> and
+<a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+<h2>What we don't do</h2>
+<ul>
+  <li>We don't sell your data.</li>
+  <li>We don't build advertising profiles beyond what Google AdMob does on
+  its own (see above).</li>
+  <li>We don't collect your collection data, your voice recordings, or your
+  photos on any server we control.</li>
+</ul>
+
+<h2>Children's privacy</h2>
+<p>Loot is not directed at children under 13 and does not knowingly collect
+personal information from them.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the "Last updated" date above will change and the
+new version will be posted at this same address.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:lepedaniel8822@gmail.com">lepedaniel8822@gmail.com</a></p>
+
+</body>
+</html>
