@@ -17,7 +17,7 @@
 <body>
 
 <h1>Privacy Policy — Loot</h1>
-<p class="updated">Last updated: July 20, 2026</p>
+<p class="updated">Last updated: August 16, 2026</p>
 
 <p>Loot ("the app") is an Android app for tracking a Magic: The Gathering card
 collection and checking card prices by voice, photo, or text. This page
@@ -45,37 +45,32 @@ not a copy of the audio recording.</p>
 from a photo you take. This is processed entirely on-device using Google's
 ML Kit text recognition — photos are not uploaded or stored by Loot.</p>
 
-<h2>Card lookups</h2>
-<p>To fetch card details and prices, Loot sends the card name (or set code
-and collector number) you're looking up to one of:</p>
-<ul>
-  <li><a href="https://scryfall.com">Scryfall</a>, a free public Magic: The
-  Gathering card database, directly from your device; or</li>
-  <li>Loot's own backend service, which mirrors a subset of Scryfall's data
-  and is gated by Google's Play Integrity API rather than a user account —
-  see below.</li>
-</ul>
-<p>Only the card name/query text is sent. No personal information, device
-identifiers, or collection data is included in these requests.</p>
+<h2>Card lookups and pricing</h2>
+<p>Card identity (name, set, printing) and pricing are stored in a local
+database on your device, kept in sync automatically in the background from
+a read-only mirror of <a href="https://scryfall.com">Scryfall</a> card data
+(plus Mana Pool and TCGplayer pricing) that we publish to our own server
+infrastructure. Looking up a card — by voice, photo, or text — matches
+entirely against this local, on-device database. No card name, photo, or
+query text is sent anywhere over the network to perform a lookup.</p>
+
+<h2>Mana Pool cart pricing (optional feature)</h2>
+<p>If you use the "Check Mana Pool carts" feature (on the Wishlist tab, or a
+deck's "Price deck" button), the card names, set codes, collector numbers,
+and quantities in that specific cart are sent from your device to our
+backend service, which forwards them to
+<a href="https://manapool.com">Mana Pool</a> to find the cheapest available
+combination of sellers. This only happens when you explicitly tap that
+button — nothing is sent automatically or in the background.</p>
 
 <h2>Play Integrity</h2>
-<p>Requests to Loot's own backend are verified using
+<p>Requests to our backend (used only for the Mana Pool cart-pricing feature
+above) are verified using
 <a href="https://developer.android.com/google/play/integrity">Google Play
 Integrity</a>, which confirms a request comes from a genuine, unmodified
-install of Loot on a certified device. This is a device/app attestation
+install of the app on a certified device. This is a device/app attestation
 check, not an account system — it does not identify you personally and
 nothing is stored tied to a persistent user or device ID.</p>
-
-<h2>Optional AI-assisted matching</h2>
-<p>Loot has an optional, off-by-default setting that uses Anthropic's Claude
-API to help match misheard card names. If you turn this on, you supply your
-own Anthropic API key, which is stored securely on your device (Android's
-encrypted keystore, via <code>expo-secure-store</code>) and never sent to
-us. When this setting is enabled, the text you're trying to match is sent
-directly from your device to Anthropic's API — see
-<a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy
-policy</a>. This feature is entirely optional and does nothing unless you
-enable it and provide a key.</p>
 
 <h2>Advertising</h2>
 <p>Loot shows ads via Google AdMob. AdMob may collect device identifiers
